@@ -1,22 +1,23 @@
 {
   "files": {
     "main.css": "/minionmaster/static/css/main.5f361e03.chunk.css",
-    "main.js": "/minionmaster/static/js/main.69eaad4e.chunk.js",
-    "main.js.map": "/minionmaster/static/js/main.69eaad4e.chunk.js.map",
+    "main.js": "/minionmaster/static/js/main.87b9082a.chunk.js",
+    "main.js.map": "/minionmaster/static/js/main.87b9082a.chunk.js.map",
     "runtime-main.js": "/minionmaster/static/js/runtime-main.c6571bd8.js",
     "runtime-main.js.map": "/minionmaster/static/js/runtime-main.c6571bd8.js.map",
-    "static/js/2.919eb038.chunk.js": "/minionmaster/static/js/2.919eb038.chunk.js",
-    "static/js/2.919eb038.chunk.js.map": "/minionmaster/static/js/2.919eb038.chunk.js.map",
+    "static/js/2.a5bc110a.chunk.js": "/minionmaster/static/js/2.a5bc110a.chunk.js",
+    "static/js/2.a5bc110a.chunk.js.map": "/minionmaster/static/js/2.a5bc110a.chunk.js.map",
     "index.html": "/minionmaster/index.html",
-    "precache-manifest.f48ae57caddc11a0fa60075547d3ba62.js": "/minionmaster/precache-manifest.f48ae57caddc11a0fa60075547d3ba62.js",
+    "precache-manifest.47c2a0efbf78c0d14ab4951d1e69dcdf.js": "/minionmaster/precache-manifest.47c2a0efbf78c0d14ab4951d1e69dcdf.js",
     "service-worker.js": "/minionmaster/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/minionmaster/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.919eb038.chunk.js.LICENSE.txt": "/minionmaster/static/js/2.919eb038.chunk.js.LICENSE.txt"
+    "static/js/2.a5bc110a.chunk.js.LICENSE.txt": "/minionmaster/static/js/2.a5bc110a.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/minionmaster/static/media/logo.095c342d.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c6571bd8.js",
-    "static/js/2.919eb038.chunk.js",
+    "static/js/2.a5bc110a.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.69eaad4e.chunk.js"
+    "static/js/main.87b9082a.chunk.js"
   ]
 }
