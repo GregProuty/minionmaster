@@ -27,7 +27,7 @@ const roll = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier) => 
     const d20 = roll + Number(bonus)
 
     // If Crit:
-    if (roll === 20 && critRangeMap[Number(critRange)].includes(Math.ceil(Math.random() * 20))) {
+    if (critRangeMap[Number(critRange)].includes(roll) && critRangeMap[Number(critRange)].includes(Math.ceil(Math.random() * 20))) {
       const dmgRoll = Math.ceil(Math.random() * Number(dmgDie)) + Number(dmgBonus)
       dmgRolls.push('crit' + (dmgRoll * Number(critMultiplier)))
       totalDmg += dmgRoll * 2
