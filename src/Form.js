@@ -9,7 +9,9 @@ const Wrapper = styled.div`
     justify-content: center;
 `
 const Button = styled.input`
-    width: 5em;
+    width: 8em;
+    height: 4em;
+    // background-color: blue;
 `
 const Label = styled.label`
     margin: 1em;
@@ -44,7 +46,6 @@ const Form = ({ getResult }) => {
   const [critRange, setCritRange] = useState('1')
   const [critMultiplier, setCritMultiplier] = useState('3')
 
-  console.log(critRange)
   return (
     <div className='Form'>
       <form onSubmit={e => {
