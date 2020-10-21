@@ -9,7 +9,6 @@ const Body = styled.div`
   justify-content: center;
 `
 const roll = (bonus, ac, times, dmgDie, dmgBonus) => {
-  // console.log('??', dmgDie, dmgBonus)
   let totalDmg = 0
   let hits = 0
   const dmgRolls = []
@@ -49,7 +48,7 @@ const App = () => {
           <h3>{result[0]}</h3>
           <h3>{result[1]}</h3>
           <h3>{result[2]}</h3>
-        </div>
+          </div>
         : null}
     </div>
   )
