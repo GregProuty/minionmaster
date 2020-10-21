@@ -108,7 +108,7 @@ const Form = ({ getResult }) => {
                         Number of Minions: <input type='number' name='minions' />
           </Label>
           <Center>
-            <Button type='submit' value='Submit' />
+            <Button type='submit' value='Roll' />
           </Center>
 
         </Wrapper>
