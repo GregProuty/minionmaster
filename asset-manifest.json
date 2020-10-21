@@ -5,17 +5,17 @@
     "main.js.map": "/minionmaster/static/js/main.4ec12698.chunk.js.map",
     "runtime-main.js": "/minionmaster/static/js/runtime-main.c6571bd8.js",
     "runtime-main.js.map": "/minionmaster/static/js/runtime-main.c6571bd8.js.map",
-    "static/js/2.8804f1e3.chunk.js": "/minionmaster/static/js/2.8804f1e3.chunk.js",
-    "static/js/2.8804f1e3.chunk.js.map": "/minionmaster/static/js/2.8804f1e3.chunk.js.map",
+    "static/js/2.8fedcddf.chunk.js": "/minionmaster/static/js/2.8fedcddf.chunk.js",
+    "static/js/2.8fedcddf.chunk.js.map": "/minionmaster/static/js/2.8fedcddf.chunk.js.map",
     "index.html": "/minionmaster/index.html",
-    "precache-manifest.f786674e61e1dd891bfe2232207c2cba.js": "/minionmaster/precache-manifest.f786674e61e1dd891bfe2232207c2cba.js",
+    "precache-manifest.04c318cbaa127752cf09f52e61a106fb.js": "/minionmaster/precache-manifest.04c318cbaa127752cf09f52e61a106fb.js",
     "service-worker.js": "/minionmaster/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/minionmaster/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.8804f1e3.chunk.js.LICENSE.txt": "/minionmaster/static/js/2.8804f1e3.chunk.js.LICENSE.txt"
+    "static/js/2.8fedcddf.chunk.js.LICENSE.txt": "/minionmaster/static/js/2.8fedcddf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c6571bd8.js",
-    "static/js/2.8804f1e3.chunk.js",
+    "static/js/2.8fedcddf.chunk.js",
     "static/css/main.5f361e03.chunk.css",
     "static/js/main.4ec12698.chunk.js"
   ]
