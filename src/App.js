@@ -2,11 +2,15 @@ import React, { useState } from 'react'
 import './App.css'
 import Form from './Form'
 import styled from 'styled-components'
+import logo from './logo.png'
 
 const Body = styled.div`
   display: flex;
   margin-top: 2em;
   justify-content: center;
+`
+const Img = styled.img`
+  width: 6em;
 `
 const critRangeMap = {
   1: [20],
@@ -47,6 +51,7 @@ const App = () => {
   return (
     <div className='App'>
       <h1>Minion Master</h1>
+      <Img src={logo} />
       <Body>
         <Form getResult={getResult} />
       </Body>
