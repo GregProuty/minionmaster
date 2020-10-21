@@ -14,8 +14,15 @@ const roll = (bonus, ac, times, dmgDie, dmgBonus) => {
   let hits = 0
   const dmgRolls = []
   for (let i = 0; i < times; i++) {
-    const d20 = Math.ceil(Math.random() * 20) + Number(bonus)
-    if (d20 >= ac) {
+    const roll = Math.ceil(Math.random() * 20)
+    const d20 = roll + Number(bonus)
+    if (roll === 20 && Math.ceil(Math.random() * 20) === 20) {
+      const dmgRoll = Math.ceil(Math.random() * Number(dmgDie)) + Number(dmgBonus)
+      dmgRolls.push('crit' + (dmgRoll * 2))
+      totalDmg += dmgRoll * 2
+      hits++
+      console.log(dmgRoll)
+    } else if (d20 >= ac) {
       const dmgRoll = Math.ceil(Math.random() * Number(dmgDie)) + Number(dmgBonus)
       dmgRolls.push(dmgRoll)
       totalDmg += dmgRoll
