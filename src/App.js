@@ -6,11 +6,39 @@ import logo from './logo.png'
 
 const Body = styled.div`
   display: flex;
-  margin-top: 2em;
+  margin-top: 0.5em;
   justify-content: center;
 `
 const Img = styled.img`
   width: 6em;
+`
+const Flex = styled.div`
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+`
+const Center = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+`
+const CenterWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+const Text = styled.h3`
+  margin-right: 0.5em;
+`
+const DmgRoll = styled.p`
+  margin-right: 0.25em;
+`
+const Crit = styled.p`
+  margin-right: 0.25em;
+  color: red;
+  font-weight: bold;
+  font-size: 110%;
 `
 const critRangeMap = {
   1: [20],
@@ -30,23 +58,29 @@ const roll = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier) => 
     if (critRangeMap[Number(critRange)].includes(roll) && critRangeMap[Number(critRange)].includes(Math.ceil(Math.random() * 20))) {
       const dmgRoll = Math.ceil(Math.random() * Number(dmgDie)) + Number(dmgBonus)
       dmgRolls.push('crit' + (dmgRoll * Number(critMultiplier)))
-      totalDmg += dmgRoll * 2
+      totalDmg += (dmgRoll * Number(critMultiplier))
       hits++
     } else if (d20 >= ac) {
       const dmgRoll = Math.ceil(Math.random() * Number(dmgDie)) + Number(dmgBonus)
-      dmgRolls.push(dmgRoll)
-      totalDmg += dmgRoll
+      dmgRolls.push(String(dmgRoll))
+      totalDmg += Number(dmgRoll)
       hits++
-      console.log(dmgRoll)
     }
   }
-  return [`Total Damage: ${totalDmg}`, `Hits: ${hits}`, `DamageRolls: ${dmgRolls.join(' ')}`]
+  return [totalDmg, hits, dmgRolls]
 }
 const App = () => {
-  const [result, setResult] = useState('')
+  const [totalDmg, setTotalDmg] = useState('')
+  const [hits, setHits] = useState('')
+  const [dmgRolls, setDmgRolls] = useState([])
 
+  console.log(dmgRolls)
   const getResult = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier) => {
-    setResult(roll(bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier))
+    const result = roll(bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier)
+
+    setTotalDmg(result[0])
+    setHits(result[1])
+    setDmgRolls(result[2])
   }
   return (
     <div className='App'>
@@ -55,12 +89,29 @@ const App = () => {
       <Body>
         <Form getResult={getResult} />
       </Body>
-      {result &&
-        <div>
-          <h3>{result[0]}</h3>
-          <h3>{result[1]}</h3>
-          <h3>{result[2]}</h3>
-        </div>}
+      <CenterWrapper>
+        {totalDmg &&
+          <Center>
+            <Flex>
+              <Text>Total Damage:</Text>
+              <p>{totalDmg}</p>
+            </Flex>
+            <Flex>
+              <Text>Hits:</Text>
+              <p>{hits}</p>
+            </Flex>
+            <Text>Damage Rolls:</Text>
+            <Flex>
+              {dmgRolls.map((roll, key) => {
+                if (roll.includes('crit')) {
+                  roll = roll.split('crit')[1]
+                  return <Crit>{roll}</Crit>
+                }
+                return <DmgRoll key={key}>{roll}</DmgRoll>
+              })}
+            </Flex>
+          </Center>}
+      </CenterWrapper>
     </div>
   )
 }

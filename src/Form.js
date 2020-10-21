@@ -55,7 +55,7 @@ const Form = ({ getResult }) => {
       >
         <Wrapper>
           <Label onChange={e => setBonus(e.target.value)}>
-                        Attack Bonus: <input type='number' name='bonus' />
+            Attack Bonus: <input type='number' name='bonus' />
           </Label>
           <Center>
             <SelectWrapper>
@@ -99,13 +99,13 @@ const Form = ({ getResult }) => {
             </SelectWrapper>
           </Center>
           <Label onChange={e => setDmgBonus(e.target.value)}>
-                        Damage Bonus: <input type='number' name='dmgBonus' />
+            Damage Bonus: <input type='number' name='dmgBonus' />
           </Label>
           <Label onChange={e => setAc(e.target.value)}>
-                        Target AC: <input type='number' name='ac' />
+            Target AC: <input type='number' name='ac' />
           </Label>
           <Label onChange={e => setMinions(e.target.value)}>
-                        Number of Minions: <input type='number' name='minions' />
+            Number of Minions: <input type='number' name='minions' />
           </Label>
           <Center>
             <Button type='submit' value='Roll' />
