@@ -40,6 +40,18 @@ const Crit = styled.p`
   font-weight: bold;
   font-size: 110%;
 `
+const BoxWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+`
+const Box = styled.div`
+  display: flex;
+  width: 50%;
+  max-width: 50%
+  justify-content: center;
+  flex-wrap: wrap;
+`
 const critRangeMap = {
   1: [20],
   2: [19, 20],
@@ -53,15 +65,14 @@ const roll = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier) => 
   for (let i = 0; i < times; i++) {
     const roll = Math.ceil(Math.random() * 20)
     const d20 = roll + Number(bonus)
+    const dmgRoll = Math.ceil(Math.random() * Number(dmgDie)) + Number(dmgBonus)
 
     // If Crit:
     if (critRangeMap[Number(critRange)].includes(roll) && critRangeMap[Number(critRange)].includes(Math.ceil(Math.random() * 20))) {
-      const dmgRoll = Math.ceil(Math.random() * Number(dmgDie)) + Number(dmgBonus)
       dmgRolls.push('crit' + (dmgRoll * Number(critMultiplier)))
       totalDmg += (dmgRoll * Number(critMultiplier))
       hits++
-    } else if (d20 >= ac) {
-      const dmgRoll = Math.ceil(Math.random() * Number(dmgDie)) + Number(dmgBonus)
+    } else if (d20 >= ac || roll === 20) {
       dmgRolls.push(String(dmgRoll))
       totalDmg += Number(dmgRoll)
       hits++
@@ -101,15 +112,17 @@ const App = () => {
               <p>{hits}</p>
             </Flex>
             <Text>Damage Rolls:</Text>
-            <Flex>
-              {dmgRolls.map((roll, key) => {
-                if (roll.includes('crit')) {
-                  roll = roll.split('crit')[1]
-                  return <Crit>{roll}</Crit>
-                }
-                return <DmgRoll key={key}>{roll}</DmgRoll>
-              })}
-            </Flex>
+            <BoxWrapper>
+              <Box>
+                {dmgRolls.map((roll, key) => {
+                  if (roll.includes('crit')) {
+                    roll = roll.split('crit')[1]
+                    return <Crit>{roll}</Crit>
+                  }
+                  return <DmgRoll key={key}>{roll}</DmgRoll>
+                })}
+              </Box>
+            </BoxWrapper>
           </Center>}
       </CenterWrapper>
     </div>
