@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "781ea89ecac26501da6e14945e5f7e0f",
+    "revision": "2f09a5b67ec2d8136988ee92ceb0dbdf",
     "url": "/minionmaster/index.html"
   },
   {
-    "revision": "5f202c48d7484807be2d",
+    "revision": "d97bc87fec50dbef6663",
     "url": "/minionmaster/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/minionmaster/static/js/2.a5bc110a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5f202c48d7484807be2d",
-    "url": "/minionmaster/static/js/main.3967170f.chunk.js"
+    "revision": "d97bc87fec50dbef6663",
+    "url": "/minionmaster/static/js/main.c7155352.chunk.js"
   },
   {
     "revision": "39cf55b6c3278ea8836d",
