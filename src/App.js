@@ -56,7 +56,7 @@ const critRangeMap = {
   3: [18, 19, 20]
 }
 
-const roll = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier) => {
+const roll = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier, twentyAlwaysHits) => {
   let totalDmg = 0
   let hits = 0
   const dmgRolls = []
@@ -70,7 +70,7 @@ const roll = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier) => 
       dmgRolls.push('crit' + (dmgRoll * Number(critMultiplier)))
       totalDmg += (dmgRoll * Number(critMultiplier))
       hits++
-    } else if (d20 >= ac || roll === 20) {
+    } else if (d20 >= ac || (twentyAlwaysHits && roll === 20)) {
       dmgRolls.push(String(dmgRoll))
       totalDmg += Number(dmgRoll)
       hits++
@@ -83,8 +83,8 @@ const App = () => {
   const [hits, setHits] = useState('')
   const [dmgRolls, setDmgRolls] = useState([])
 
-  const getResult = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier) => {
-    const result = roll(bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier)
+  const getResult = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier, twentyAlwaysHits) => {
+    const result = roll(bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier, twentyAlwaysHits)
 
     setTotalDmg(result[0])
     setHits(result[1])

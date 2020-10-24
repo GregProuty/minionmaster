@@ -45,12 +45,13 @@ const Form = ({ getResult }) => {
   const [dmgBonus, setDmgBonus] = useState(0)
   const [critRange, setCritRange] = useState('1')
   const [critMultiplier, setCritMultiplier] = useState('3')
+  const [twentyAlwaysHits, setTwentyAlwaysHits] = useState(false)
 
   return (
     <div className='Form'>
       <form onSubmit={e => {
         e.preventDefault()
-        getResult(bonus, ac, minions, dmgDie, dmgBonus, critRange, critMultiplier)
+        getResult(bonus, ac, minions, dmgDie, dmgBonus, critRange, critMultiplier, twentyAlwaysHits)
       }}
       >
         <Wrapper>
@@ -107,6 +108,13 @@ const Form = ({ getResult }) => {
           <Label onChange={e => setMinions(e.target.value)}>
             Number of Minions: <input type='number' name='minions' />
           </Label>
+          <div>
+            <label>20s Always Hit:</label>
+            <input
+              type='checkbox' value={twentyAlwaysHits} onChange={e =>
+                setTwentyAlwaysHits(!twentyAlwaysHits)}
+            />
+          </div>
           <Center>
             <Button type='submit' value='Roll' />
           </Center>
