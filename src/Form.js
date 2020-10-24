@@ -32,10 +32,7 @@ const DropdownWrapper = styled.div`
   margin-left: 2em;
 `
 const Center = styled.div`
-  // display: flex;
-  // flex-direction: row;
   width: 100%
-  // justify-content: center;
 `
 const SelectWrapper = styled.div`
   display: flex;

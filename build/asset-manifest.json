@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/minionmaster/static/css/main.5f361e03.chunk.css",
-    "main.js": "/minionmaster/static/js/main.f417b84b.chunk.js",
-    "main.js.map": "/minionmaster/static/js/main.f417b84b.chunk.js.map",
+    "main.js": "/minionmaster/static/js/main.4d0e882f.chunk.js",
+    "main.js.map": "/minionmaster/static/js/main.4d0e882f.chunk.js.map",
     "runtime-main.js": "/minionmaster/static/js/runtime-main.c6571bd8.js",
     "runtime-main.js.map": "/minionmaster/static/js/runtime-main.c6571bd8.js.map",
     "static/js/2.a5bc110a.chunk.js": "/minionmaster/static/js/2.a5bc110a.chunk.js",
     "static/js/2.a5bc110a.chunk.js.map": "/minionmaster/static/js/2.a5bc110a.chunk.js.map",
     "index.html": "/minionmaster/index.html",
-    "precache-manifest.7ac4773ef53f84a273882f0819330d8a.js": "/minionmaster/precache-manifest.7ac4773ef53f84a273882f0819330d8a.js",
+    "precache-manifest.cb31c9c0b7eb206b8132336834a313c6.js": "/minionmaster/precache-manifest.cb31c9c0b7eb206b8132336834a313c6.js",
     "service-worker.js": "/minionmaster/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/minionmaster/static/css/main.5f361e03.chunk.css.map",
     "static/js/2.a5bc110a.chunk.js.LICENSE.txt": "/minionmaster/static/js/2.a5bc110a.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.c6571bd8.js",
     "static/js/2.a5bc110a.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.f417b84b.chunk.js"
+    "static/js/main.4d0e882f.chunk.js"
   ]
 }

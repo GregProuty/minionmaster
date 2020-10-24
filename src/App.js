@@ -100,29 +100,32 @@ const App = () => {
         <Form getResult={getResult} />
       </Body>
       <CenterWrapper>
-        {totalDmg &&
-          <Center>
-            <Flex>
-              <Text>Total Damage:</Text>
-              <p>{totalDmg}</p>
-            </Flex>
-            <Flex>
-              <Text>Hits:</Text>
-              <p>{hits}</p>
-            </Flex>
-            <Text>Damage Rolls:</Text>
-            <BoxWrapper>
-              <Box>
-                {dmgRolls.map((roll, key) => {
-                  if (roll.includes('crit')) {
-                    roll = roll.split('crit')[1]
-                    return <Crit>{roll}</Crit>
-                  }
-                  return <DmgRoll key={key}>{roll}</DmgRoll>
-                })}
-              </Box>
-            </BoxWrapper>
-          </Center>}
+        {totalDmg !== ''
+          ? totalDmg === 0
+            ? <Crit>COMPLETE MISS</Crit>
+            : <Center>
+              <Flex>
+                <Text>Total Damage:</Text>
+                <p>{totalDmg}</p>
+              </Flex>
+              <Flex>
+                <Text>Hits:</Text>
+                <p>{hits}</p>
+              </Flex>
+              <Text>Damage Rolls:</Text>
+              <BoxWrapper>
+                <Box>
+                  {dmgRolls.map((roll, key) => {
+                    if (roll.includes('crit')) {
+                      roll = roll.split('crit')[1]
+                      return <Crit>{roll}</Crit>
+                    }
+                    return <DmgRoll key={key}>{roll}</DmgRoll>
+                  })}
+                </Box>
+              </BoxWrapper>
+              </Center>
+          : null}
       </CenterWrapper>
     </div>
   )
