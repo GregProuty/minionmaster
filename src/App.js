@@ -47,8 +47,6 @@ const BoxWrapper = styled.div`
 `
 const Box = styled.div`
   display: flex;
-  width: 50%;
-  max-width: 50%
   justify-content: center;
   flex-wrap: wrap;
 `
@@ -85,7 +83,6 @@ const App = () => {
   const [hits, setHits] = useState('')
   const [dmgRolls, setDmgRolls] = useState([])
 
-  console.log(dmgRolls)
   const getResult = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier) => {
     const result = roll(bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier)
 
