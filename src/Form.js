@@ -18,24 +18,34 @@ const Label = styled.label`
 `
 const Select = styled.select`
     width: 5em;
-    // height: 85%;
-
+`
+const Dropdown = styled.select`
+  width: 10em;
+  height: 3em;
+`
+const DropdownWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 2em;
 `
 const Center = styled.div`
-    // display: flex;
-    // flex-direction: row;
-    width: 100%
-    // justify-content: center;
+  // display: flex;
+  // flex-direction: row;
+  width: 100%
+  // justify-content: center;
 `
 const SelectWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 60%;
-    margin-left: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+  margin-left: 20%;
 `
 const Text = styled.p`
-    width: 8em;
+  width: 10em;
 `
 const CheckBoxWrapper = styled.div`
   margin-bottom: 1em;
@@ -49,12 +59,13 @@ const Form = ({ getResult }) => {
   const [critRange, setCritRange] = useState('1')
   const [critMultiplier, setCritMultiplier] = useState('3')
   const [twentyAlwaysHits, setTwentyAlwaysHits] = useState(false)
+  const [targetConcealment, setTargetConcealment] = useState('1')
 
   return (
     <div className='Form'>
       <form onSubmit={e => {
         e.preventDefault()
-        getResult(bonus, ac, minions, dmgDie, dmgBonus, critRange, critMultiplier, twentyAlwaysHits)
+        getResult(bonus, ac, minions, dmgDie, dmgBonus, critRange, critMultiplier, twentyAlwaysHits, targetConcealment)
       }}
       >
         <Wrapper>
@@ -108,6 +119,19 @@ const Form = ({ getResult }) => {
           <Label onChange={e => setAc(e.target.value)}>
             Target AC: <input type='number' name='ac' />
           </Label>
+          <Center>
+            <DropdownWrapper>
+              <Text>Target concealment:</Text>
+              <Dropdown
+                value={targetConcealment}
+                onChange={e => setTargetConcealment(e.target.value)}
+              >
+                <option value='1'>None</option>
+                <option value='2'>Concealment</option>
+                <option value='3'>Total Concealment</option>
+              </Dropdown>
+            </DropdownWrapper>
+          </Center>
           <Label onChange={e => setMinions(e.target.value)}>
             Number of Minions: <input type='number' name='minions' />
           </Label>

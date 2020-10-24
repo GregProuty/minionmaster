@@ -56,7 +56,7 @@ const critRangeMap = {
   3: [18, 19, 20]
 }
 
-const roll = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier, twentyAlwaysHits) => {
+const roll = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier, twentyAlwaysHits, targetConcealment) => {
   let totalDmg = 0
   let hits = 0
   const dmgRolls = []
@@ -65,15 +65,17 @@ const roll = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier, twe
     const d20 = roll + Number(bonus)
     const dmgRoll = Math.ceil(Math.random() * Number(dmgDie)) + Number(dmgBonus)
 
-    // If Crit:
-    if (critRangeMap[Number(critRange)].includes(roll) && critRangeMap[Number(critRange)].includes(Math.ceil(Math.random() * 20))) {
-      dmgRolls.push('crit' + (dmgRoll * Number(critMultiplier)))
-      totalDmg += (dmgRoll * Number(critMultiplier))
-      hits++
-    } else if (d20 >= ac || (twentyAlwaysHits && roll === 20)) {
-      dmgRolls.push(String(dmgRoll))
-      totalDmg += Number(dmgRoll)
-      hits++
+    if (targetConcealment === '1' || (targetConcealment === '2' && Math.ceil(Math.random() * 5) !== 5) || (targetConcealment === '3' && Math.ceil(Math.random() * 2) === 2)) {
+      // If Crit:
+      if (critRangeMap[Number(critRange)].includes(roll) && critRangeMap[Number(critRange)].includes(Math.ceil(Math.random() * 20))) {
+        dmgRolls.push('crit' + (dmgRoll * Number(critMultiplier)))
+        totalDmg += (dmgRoll * Number(critMultiplier))
+        hits++
+      } else if (d20 >= ac || (twentyAlwaysHits && roll === 20)) {
+        dmgRolls.push(String(dmgRoll))
+        totalDmg += Number(dmgRoll)
+        hits++
+      }
     }
   }
   return [totalDmg, hits, dmgRolls]
@@ -83,8 +85,8 @@ const App = () => {
   const [hits, setHits] = useState('')
   const [dmgRolls, setDmgRolls] = useState([])
 
-  const getResult = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier, twentyAlwaysHits) => {
-    const result = roll(bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier, twentyAlwaysHits)
+  const getResult = (bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier, twentyAlwaysHits, targetConcealment) => {
+    const result = roll(bonus, ac, times, dmgDie, dmgBonus, critRange, critMultiplier, twentyAlwaysHits, targetConcealment)
 
     setTotalDmg(result[0])
     setHits(result[1])
