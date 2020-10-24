@@ -37,6 +37,9 @@ const SelectWrapper = styled.div`
 const Text = styled.p`
     width: 8em;
 `
+const CheckBoxWrapper = styled.div`
+  margin-bottom: 1em;
+`
 const Form = ({ getResult }) => {
   const [bonus, setBonus] = useState(0)
   const [ac, setAc] = useState(0)
@@ -108,13 +111,13 @@ const Form = ({ getResult }) => {
           <Label onChange={e => setMinions(e.target.value)}>
             Number of Minions: <input type='number' name='minions' />
           </Label>
-          <div>
+          <CheckBoxWrapper>
             <label>20s Always Hit:</label>
             <input
               type='checkbox' value={twentyAlwaysHits} onChange={e =>
                 setTwentyAlwaysHits(!twentyAlwaysHits)}
             />
-          </div>
+          </CheckBoxWrapper>
           <Center>
             <Button type='submit' value='Roll' />
           </Center>
